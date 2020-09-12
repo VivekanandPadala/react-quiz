@@ -4,19 +4,48 @@
 }
 
 .appContainer {
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .quizCard {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-radius: 0.313rem;
+}
+
+.cardAlignment {
+    display: flex;
+}
+
+.cardTitle {
+    font-size: 1.5625rem;
+    font-weight: 400;
+}
+
+.cardDesc {
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
 footer {
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 20px;
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 300;
     color: #ffffff;
-    text-align: center;   
+    text-align: center;
+}
+
+.footerLink {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footerLink:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
