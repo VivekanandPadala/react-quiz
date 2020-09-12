@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oxygen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: -webkit-linear-gradient(to right, #4568dc, #b06ab3);
+  background: -o-linear-gradient(to right, #4568dc, #b06ab3);
+  background: -moz-linear-gradient(to right, #4568dc, #b06ab3);
+  background: linear-gradient(to right, #4568dc, #b06ab3);
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}

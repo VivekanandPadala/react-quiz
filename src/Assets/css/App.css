@@ -1,0 +1,22 @@
+.heading {
+    text-align: center;
+    color: #ffffff;
+}
+
+.appContainer {
+    margin-top: 50px;
+}
+
+.quizCard {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;   
+}
