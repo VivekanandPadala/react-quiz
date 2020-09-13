@@ -15,3 +15,7 @@ Vivekanand Padala
 ## License
 
 MIT License
+
+## Deployed at Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/883cc4b0-182e-4e03-93ff-b5108f2bdb98/deploy-status)](https://app.netlify.com/sites/triviaquizapp/deploys)
