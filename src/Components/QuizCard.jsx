@@ -1,29 +1,19 @@
 import React, { useState, useEffect } from "react";
 import {
-  Container,
-  Row,
-  Col,
   Card,
   CardImg,
   CardText,
   CardBody,
   CardTitle,
   Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
 } from "reactstrap";
+import Questionnaire from "./Questionnaire";
 
 const API_URL =
   "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=multiple";
 
 const QuizCard = (props) => {
   const [questions, setQuestions] = useState([]);
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => setModal(!modal);
-
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -34,51 +24,9 @@ const QuizCard = (props) => {
   return (
     <>
       {questions.length > 0 && (
-        <Modal isOpen={modal} toggle={toggleModal}>
-          <ModalHeader toggle={toggleModal}>
-            {questions[0].category}
-          </ModalHeader>
-          <ModalBody>
-            <Container>
-              <Row>
-                <Col sm="12" md="12">
-                  <h4
-                    className="quizQuestion"
-                    dangerouslySetInnerHTML={{ __html: "Q. " + questions[0].question }}
-                  ></h4>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="6" md="6" className="choiceButton">
-                  <Button color="primary" block>
-                    {questions[0].correct_answer}
-                  </Button>
-                </Col>
-                <Col sm="6" md="6" className="choiceButton">
-                  <Button color="primary" block>
-                    {questions[0].incorrect_answers[0]}
-                  </Button>
-                </Col>
-                <Col sm="6" md="6" className="choiceButton">
-                  <Button color="primary" block>
-                    {questions[0].incorrect_answers[1]}
-                  </Button>
-                </Col>
-                <Col sm="6" md="6" className="choiceButton">
-                  <Button color="primary" block>
-                    {questions[0].incorrect_answers[2]}
-                  </Button>
-                </Col>
-              </Row>
-            </Container>
-          </ModalBody>
-          <ModalFooter>
-            {" "}
-            <Button color="secondary" onClick={toggleModal}>
-              Close
-            </Button>
-          </ModalFooter>
-        </Modal>
+        <Questionnaire
+          data={questions[0]}
+        />
       )}
       <Card className="quizCard">
         <CardImg
@@ -91,7 +39,7 @@ const QuizCard = (props) => {
         <CardBody>
           <CardTitle className="cardTitle">{props.title}</CardTitle>
           <CardText className="cardDesc">{props.desc}</CardText>
-          <Button color="success" block onClick={toggleModal}>
+          <Button color="success" block>
             Start
           </Button>
         </CardBody>
