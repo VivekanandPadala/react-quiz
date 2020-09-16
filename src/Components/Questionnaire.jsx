@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Container,
   Row,
@@ -8,7 +8,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from "reactstrap";
+} from 'reactstrap';
 
 const Questionnaire = ({
   data: { question, correct_answer, incorrect_answers },
@@ -21,31 +21,30 @@ const Questionnaire = ({
       <ModalBody>
         <Container>
           <Row>
-            <Col sm="12" md="12">
+            <Col sm='12' md='12'>
               <h4
-                className="quizQuestion"
-                dangerouslySetInnerHTML={{ __html: "Q. " + question }}
-              ></h4>
+                className='quizQuestion'
+                dangerouslySetInnerHTML={{ __html: 'Q. ' + question }}></h4>
             </Col>
           </Row>
           <Row>
-            <Col sm="6" md="6" className="choiceButton">
-              <Button color="primary" block>
+            <Col sm='6' md='6' className='choiceButton'>
+              <Button color='primary' block>
                 {correct_answer}
               </Button>
             </Col>
-            <Col sm="6" md="6" className="choiceButton">
-              <Button color="primary" block>
+            <Col sm='6' md='6' className='choiceButton'>
+              <Button color='primary' block>
                 {incorrect_answers[0]}
               </Button>
             </Col>
-            <Col sm="6" md="6" className="choiceButton">
-              <Button color="primary" block>
+            <Col sm='6' md='6' className='choiceButton'>
+              <Button color='primary' block>
                 {incorrect_answers[1]}
               </Button>
             </Col>
-            <Col sm="6" md="6" className="choiceButton">
-              <Button color="primary" block>
+            <Col sm='6' md='6' className='choiceButton'>
+              <Button color='primary' block>
                 {incorrect_answers[2]}
               </Button>
             </Col>
@@ -53,8 +52,8 @@ const Questionnaire = ({
         </Container>
       </ModalBody>
       <ModalFooter>
-        {" "}
-        <Button color="secondary" onClick={toggleModal}>
+        {' '}
+        <Button color='secondary' onClick={toggleModal}>
           Close
         </Button>
       </ModalFooter>
