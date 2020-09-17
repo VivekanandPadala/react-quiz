@@ -1,10 +1,9 @@
 // eslint-disable-next-line
-import React from 'react';
-import './Assets/css/App.css';
-import { Container, Row, Col } from 'reactstrap';
-import QuizCard from './Components/QuizCard';
-import cardsData from './Components/CardsData.js';
-import Questionnaire from './Components/Questionnaire';
+import React from "react";
+import "./Assets/css/App.css";
+import { Container, Row, Col } from "reactstrap";
+import QuizCard from "./Components/QuizCard";
+import cardsData from "./Components/CardsData.js";
 
 const App = () => {
   const getYear = () => {
@@ -13,7 +12,7 @@ const App = () => {
 
   const createCard = (cardsData) => {
     return (
-      <Col sm='12' md='4' className='cardAlignment'>
+      <Col sm="12" md="12" className="cardAlignment">
         <QuizCard
           key={cardsData.id}
           title={cardsData.title}
@@ -25,25 +24,26 @@ const App = () => {
   };
   return (
     <div>
-      <Container className='appContainer'>
+      <Container className="appContainer">
         {/* <Questionnaire /> */}
         <Row>
-          <Col sm='12' md='12'>
-            <h1 className='heading'>Quiz App</h1>
+          <Col sm="12" md="12">
+            <h1 className="heading">Quiz App</h1>
           </Col>
         </Row>
         <Row>{cardsData.map(createCard)}</Row>
       </Container>
 
-      <footer className='footer'>
-        Designed and Developed by{' '}
+      <footer className="footer">
+        Designed and Developed by{" "}
         <a
-          className='footerLink'
-          href='https://vivekanand.netlify.app'
-          target='_blank'
-          rel='noopener noreferrer'>
+          className="footerLink"
+          href="https://vivekanand.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Vivekanand Padala
-        </a>{' '}
+        </a>{" "}
         &copy; {getYear()}
       </footer>
     </div>

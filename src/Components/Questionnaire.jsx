@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -8,56 +8,57 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from 'reactstrap';
+} from "reactstrap";
 
 const Questionnaire = ({
-  data: { question, correct_answer, incorrect_answers },
+  handleAnswer,
+  score,
+  data: { question, correct_answer, incorrect_answers, category },
 }) => {
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
+  const shuffledAnswers = [correct_answer, ...incorrect_answers].sort(
+    () => Math.random() - 0.5
+  );
   return (
-    <Modal isOpen={modal} toggle={toggleModal}>
-      <ModalHeader toggle={toggleModal}>{question[0].category}</ModalHeader>
-      <ModalBody>
-        <Container>
-          <Row>
-            <Col sm='12' md='12'>
-              <h4
-                className='quizQuestion'
-                dangerouslySetInnerHTML={{ __html: 'Q. ' + question }}></h4>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm='6' md='6' className='choiceButton'>
-              <Button color='primary' block>
-                {correct_answer}
-              </Button>
-            </Col>
-            <Col sm='6' md='6' className='choiceButton'>
-              <Button color='primary' block>
-                {incorrect_answers[0]}
-              </Button>
-            </Col>
-            <Col sm='6' md='6' className='choiceButton'>
-              <Button color='primary' block>
-                {incorrect_answers[1]}
-              </Button>
-            </Col>
-            <Col sm='6' md='6' className='choiceButton'>
-              <Button color='primary' block>
-                {incorrect_answers[2]}
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </ModalBody>
-      <ModalFooter>
-        {' '}
-        <Button color='secondary' onClick={toggleModal}>
-          Close
-        </Button>
-      </ModalFooter>
-    </Modal>
+    <>
+      <Button color="success" block onClick={toggleModal}>
+        Start
+      </Button>
+      <Modal isOpen={modal} toggle={toggleModal}>
+        <ModalHeader toggle={toggleModal}>{category}</ModalHeader>
+        <ModalBody>
+          <Container>
+            <Row>
+              <Col sm="12" md="12">
+                <h4
+                  className="quizQuestion"
+                  dangerouslySetInnerHTML={{ __html: "Q. " + question }}
+                ></h4>
+              </Col>
+            </Row>
+            <Row>
+              {shuffledAnswers.map((answer) => (
+                <Col sm="6" md="6" className="choiceButton">
+                  <Button
+                    color="primary"
+                    block
+                    onClick={() => handleAnswer(answer)}
+                    dangerouslySetInnerHTML={{ __html: answer }}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </ModalBody>
+        <ModalFooter>
+          <p className="score">Your Score is {score}</p>{" "}
+          <Button color="secondary" onClick={toggleModal}>
+            Close
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </>
   );
 };
 
