@@ -20,13 +20,21 @@
 }
 
 .cardTitle {
+    text-align: center;
     font-size: 1.5625rem;
     font-weight: 400;
 }
 
 .cardDesc {
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 300;
+}
+
+.score {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 .choiceButton {

@@ -12,7 +12,7 @@ const App = () => {
 
   const createCard = (cardsData) => {
     return (
-      <Col sm="12" md="4" className="cardAlignment">
+      <Col sm="12" md="12" className="cardAlignment">
         <QuizCard
           key={cardsData.id}
           title={cardsData.title}
@@ -25,6 +25,7 @@ const App = () => {
   return (
     <div>
       <Container className="appContainer">
+        {/* <Questionnaire /> */}
         <Row>
           <Col sm="12" md="12">
             <h1 className="heading">Quiz App</h1>
@@ -32,6 +33,7 @@ const App = () => {
         </Row>
         <Row>{cardsData.map(createCard)}</Row>
       </Container>
+
       <footer className="footer">
         Designed and Developed by{" "}
         <a
