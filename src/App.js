@@ -12,7 +12,7 @@ const App = () => {
 
   const createCard = (cardsData) => {
     return (
-      <Col sm="12" md="12" className="cardAlignment">
+      <Col sm="12" md="6" className="cardAlignment">
         <QuizCard
           key={cardsData.id}
           title={cardsData.title}
@@ -31,21 +31,34 @@ const App = () => {
             <h1 className="heading">Quiz App</h1>
           </Col>
         </Row>
-        <Row>{cardsData.map(createCard)}</Row>
-      </Container>
-
-      <footer className="footer">
-        Designed and Developed by{" "}
+        <Row>
+          {cardsData.map(createCard)}
+          <Col sm="12" md="6">
+            <p className="aboutApp">Made using ReactJS!</p>
+            <p className="aboutApp">
+              Feel free to check the repo{" "}
+              <a
+                className="link"
+                href="https://github.com/VivekanandPadala/react-quiz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here!
+              </a>
+            </p>
+            <p className="aboutApp">Designed and Developed by{" "}
         <a
-          className="footerLink"
+          className="link"
           href="https://vivekanand.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Vivekanand Padala
         </a>{" "}
-        &copy; {getYear()}
-      </footer>
+        &copy; {getYear()}</p>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

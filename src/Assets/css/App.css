@@ -39,6 +39,14 @@
 
 .choiceButton {
     margin-bottom: 10px;
+    width: 100px;
+}
+
+.aboutApp {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #ffffff;
 }
 
 .quizQuestion {
@@ -46,23 +54,12 @@
     font-weight: 700;
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: #ffffff;
-    text-align: center;
-}
-
-.footerLink {
+.link {
     color: #ffffff;
     text-decoration: underline;
 }
 
-.footerLink:hover {
+.link:hover {
     color: #ffffff;
     text-decoration: none;
 }
