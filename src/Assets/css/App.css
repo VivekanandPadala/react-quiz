@@ -39,7 +39,7 @@
 
 .choiceButton {
     margin-bottom: 10px;
-    width: 100px;
+    width: fit-content;
 }
 
 .aboutApp {
