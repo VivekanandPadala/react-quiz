@@ -41,7 +41,7 @@ const QuizCard = (props) => {
       />
       <CardBody>
         <CardTitle className="cardTitle">{props.title}</CardTitle>
-        <CardText className="cardDesc">{props.desc}</CardText>
+        <CardText className="cardDesc">Thank you for playing.</CardText>
         <p className="score">Your Final Score is {score}</p>
       </CardBody>
     </Card>
